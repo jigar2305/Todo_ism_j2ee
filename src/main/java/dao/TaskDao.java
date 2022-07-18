@@ -82,10 +82,11 @@ public class TaskDao {
 				PreparedStatement pstmt = con.prepareStatement("delete from task where taskid=?");) {
 			pstmt.setInt(1, taskid);
 			int record = pstmt.executeUpdate();
-			System.out.println("delete " + record);
-			return true;
+			if(record==1) {
+				return true;				
+			}
 		} catch (SQLException e) {
-			System.out.println("smw in delete");
+			System.out.println("smw in delete()");
 			e.printStackTrace();
 		}
 		return true;
@@ -99,8 +100,9 @@ public class TaskDao {
 			pstmt.setString(1, s);
 			pstmt.setInt(2, taskid);
 			int record = pstmt.executeUpdate();
-			System.out.println("update "+record);
-			return true;
+			if(record==1) {
+				return true;				
+			}
 		} catch (SQLException e) {
 			System.out.println("smw in update status");
 			e.printStackTrace();
@@ -115,8 +117,9 @@ public class TaskDao {
 			pstmt.setString(1, p);
 			pstmt.setInt(2, taskid);
 			int record = pstmt.executeUpdate();
-			System.out.println("update "+record);
-			return true;
+			if(record==1) {
+				return true;				
+			}
 		} catch (SQLException e) {
 			System.out.println("smw in update priority");
 			e.printStackTrace();

@@ -24,7 +24,6 @@ public class UserDao {
 
 			int record = pstms.executeUpdate();
 
-			System.out.println(record + "inserted");
 			if (record == 1) {
 				return true;
 			}
@@ -90,8 +89,9 @@ public class UserDao {
 			ptsmt.setString(1, password);
 			ptsmt.setString(2, email);
 			int record = ptsmt.executeUpdate();
-			System.out.println(record + "Updated");
-			return true;
+			if(record==1) {
+				return true;				
+			}
 		} catch (SQLException e) {
 			System.out.println("smw in forgotpassword()");
 			e.printStackTrace();
@@ -121,7 +121,6 @@ public class UserDao {
 						.prepareStatement("update users set active='deactivate' where userid=?");) {
 			ptsmt.setInt(1, userid);
 			int record = ptsmt.executeUpdate();
-			System.out.println(record + "Updated");
 			return record;
 		} catch (SQLException e) {
 			System.out.println("smw in forgotpassword()");

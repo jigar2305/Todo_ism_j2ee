@@ -25,11 +25,19 @@
         <li class="nav-item">
         <a class="nav-link" href="PerController">persentage</a>
       </li>
-     
-      <li class="nav-item">
-        <a class="nav-link" href="LogoutController">Logout</a>
-      </li>
     </ul>
+    
+        <h4 style="
+        text-align: center;
+        font-family: bolder;
+        justify-content: right;
+        margin-right: 10px; 
+        color: grey;
+        
+        "
+        
+        
+        >Welcome, ${firstname}</h4>
     <form class="form-inline my-2 my-lg-0">
       <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
       <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>

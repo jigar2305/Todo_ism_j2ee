@@ -14,7 +14,6 @@ public class SignupController extends HttpServlet {
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		System.out.println("tst");
 		String firstname = request.getParameter("firstname");
 		String lastname = request.getParameter("lastname");
 		String email = request.getParameter("email");
@@ -37,7 +36,6 @@ public class SignupController extends HttpServlet {
 		if (userDao.adduser(user)) {
 			response.sendRedirect("login.jsp");
 		} else {
-			System.out.println("test");
 			request.getRequestDispatcher("signup.jsp").forward(request, response);
 		}
 	}

@@ -19,7 +19,10 @@ public class GetQuestionController extends HttpServlet {
 		String email = request.getParameter("email");
 		request.setAttribute("email", email);
 		UserDao userDao = new UserDao();
-		if(userDao.duplicate(email)) {
+		if (email == null || email.trim().length() == 0) {
+			request.setAttribute("emailmsg", "please enter email.");
+			request.getRequestDispatcher("email.jsp").forward(request, response);
+		}else if(userDao.duplicate(email)) {
 			String question = userDao.getQuestion(email);
 			request.setAttribute("question", question);	
 			

@@ -25,8 +25,7 @@ public class SessionFilter implements Filter{
 
 		    //check if "session" attribute is null
 		    if(req.getSession(false) == null) {
-		        //forward request to login.jsp
-		        req.getRequestDispatcher("LogoutController").forward(request, response);
+		        request.getRequestDispatcher("LogoutController").forward(request, response);
 		    } else {
 		        chain.doFilter(request, response);
 		    }

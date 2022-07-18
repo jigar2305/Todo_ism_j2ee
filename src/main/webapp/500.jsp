@@ -121,7 +121,8 @@
   <div class="cycle">
     
   <h1>500- Internal error</h1>
-<h2> Something went wrong a<a href="TodolistController" class="btn">Go Back</a></h2>  
+<h2> Something went wrong .<a href="LogoutController"style="text-decoration: none;" > <button style="background-color: blue;border-radius:5px;      color: white; border: 1px solid grey;"> Please login</button>
+</a></h2>  
   <svg xmlns="http://www.w3.org/2000/svg" id="el_-TWBznsTc" width="1880" height="280">
     
  <!-- Created with Method Draw - http://github.com/duopixel/Method-Draw/ -->
